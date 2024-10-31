@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Ge Liu"
-description              : "The people who are crazy enough to think that they can are the ones who do. "
-repository               : "Laukoor.github.io"
+title                    : "Wenwan Zeng"
+description              : "And I still rise. "
+repository               : "Wenwanzeng.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,14 +21,14 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Ge Liu"
+  name             : "Wenwan Zeng"
   avatar           : "images/avatar500x500.png"
-  bio              : "Call me Laukor! "
+  bio              : "Call me Wenwan! "
   location         : "Beijing, China"
   employer         :
   pubmed           : 
   googlescholar    : # "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
-  email            : "Liu_Ge@163.com"
+  email            : "wenwanzen@163.com"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "Laukoor"
+  github           : "Wenwanzeng"
   google_plus      :
   keybase          :
   instagram        :
