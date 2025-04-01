@@ -1,6 +1,6 @@
 # 🏷️ Educations
 
-- `August 2022 - Present`: Master of Engineering (M.Eng) in Microelectronics and Solid State Electronics, jointly at the **Institute of Microelectronics of the Chinese Academy of Sciences (IMECAS)** and the **University of Chinese Academy of Sciences (UCAS)**. <br>
-    **GPA:3.79/4**
-- `September 2018 - June 2022`: Bachelor of Engineering (B.Eng) in Microelectronics Science and Engineering, **Central South University**. <br>
-    **Weighted Average Score Certification:92.37/100**
+- `August 2022 - Present`: Master of Science in Physical Chemistry, jointly at the  **University of Chinese Academy of Sciences (UCAS)**. <br>
+    **GPA:3.78/4.00**
+- `September 2018 - June 2022`: Bachelor of Science in Appllied Chemistry, **Central South University**. <br>
+    **Weighted Average Score Certification:89.60/100.00**
