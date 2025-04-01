@@ -1,10 +1,10 @@
 # 🏷️ Projects
 
 ## Research Project
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SPIE Proc.13215.2024</div><img src='images/selected pub/SPIE.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SPIE Proc.13215.2024</div><img src='images/selected pub/TTA.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Comprehensive 3D Feature Estimation and Reconstruction of Microstructures** <br>
+**Toward a comprehensive understanding of excitation-dependent luminescence in triplet triplet annihilation (TTA)** <br>
 
 - Estimation via 2D Images.
 - Spatial and frequency domain approach.
@@ -16,7 +16,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Bachelor's Thesis</div><img src='images/selected pub/kitty.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Single-Axis Displacement Control System for Photoacoustic CT** <br>
+**Mechanism of All-optical organic fluorescent synapse based on TTA** <br>
 
 - Customized for the Imaging Characteristics of Photoacoustic CT.
 - From Hardware Circuit Design to Control Software and User Interface.
@@ -30,7 +30,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CUPT 2020</div><img src='images/selected pub/CUPT.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Swinging Sound Tube** <br>
+**Mechanism of Organic phosphorescent synapse** <br>
 
 - Explained the sound-producing mechanism of the sound tube.
 - Provided a quantitative formula for the sound tube's frequency.
