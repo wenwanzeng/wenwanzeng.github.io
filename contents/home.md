@@ -1,16 +1,14 @@
 
 
-[![senli1073](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
-
-He is currently pursuing a Master's Degree in Computer Science, at School of Computer Science and Technology, China University of Mining and Technology, China.
+She is currently pursuing a Master's Degree in Physical Chemistry, at School of Chemical Sciences, University of Chinese Academy of Sciences, China.
 
 #### Email
-sli[at]cumt.edu.cn
+zengwenwan22[at]mails.ucas.ac.cn
 
 #### Education
-M.E., Computer Science and Technology, China University of Mining and Technology, 2022—2025 (expected).\
-B.E., Data Science and Big Data Technology, China University of Mining and Technology, 2018—2022.
+M.E., Physical Chemistry, University of Chinese Academy of Sciences, 2022—2025 (expected).\
+B.E., Applied Chemistry , Central South University , 2018—2022.
 
 #### Research Interests
-Deep Learning, Artificial Intelligence Seismology, Mine Microseismic.
+Dynamic of excited state; Electronic structure; Material transport and luminescence mechanism; Quantum Dynamics. 
 
