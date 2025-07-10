@@ -1,16 +1,5 @@
+- Merit Studen, 2025.
 
-- Outstanding Graduate Award (CUMT), 2025.
+- Best Poster Award of the 15th National Conference of Theoretical and Computational Chemistry, 2024.
 
-- National Scholarship for Graduate Student, 2024.
-
-- First-Prize Scholarship (CUMT), 2024.
-
-- First-Prize Scholarship (CUMT), 2023.
-
-- Freshman Scholarship (CUMT), 2022.
-
-- Outstanding Graduation Project Award (Jiangsu Province), 2022.
-
-- First-Prize Enterprise Scholarship (CUMT), 2020.
-
-- First-Prize Scholarship (CUMT), 2019.
+- National Scholarship, China, 2021.
