@@ -17,9 +17,9 @@ B.E., Applied Chemistry , Central South University , 2018—2022.
 Research interests include (but are not limited to): QM/MM methods; Machine learning; Complex 
 system or excited states dynamics simulation; 
 
-## Projects
+#### Projects
 
-### 1. Toward a comprehensive understanding of excitation-dependent luminescence in triplet-triplet annihilation
+#### 1. Toward a comprehensive understanding of excitation-dependent luminescence in triplet-triplet annihilation
 **Abstract**: Triplet–triplet annihilation (TTA) is widely used in optical up-conversion and exciton-based devices due to its high energy efficiency.However, traditional kinetic models fail to capture the complex dynamics observed in many one-component organic TTA systems.This work proposes a generalized TTA kinetic model by incorporating additional excited states under different conditions and deriving a new formalism for luminescence intensity.The model provides a more universal criterion for identifying TTA behavior and offers a practical tool for analyzing systems with non-traditional kinetics.
 
 **Method**: Kinetic modeling of triplet-triplet annihilation process, supported steady-state spectrum experiments and TDDFT simulations.  
