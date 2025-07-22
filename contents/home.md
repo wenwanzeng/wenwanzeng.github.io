@@ -21,7 +21,7 @@ Dynamic of excited state; Electronic structure; Material transport and luminesce
 **Results**: 
 a. Two models, eleven cases
 
-![Result Image](assets/img/TTA_model.png)  
+![Result Image](static/assets/img/TTA_model.png)  
 
 b. General formalism： 
 $$
@@ -31,11 +31,11 @@ $$
 \Phi_{\text{em}} = N(C + A + B/k_{\text{ex}} - \sqrt{(B/k_{\text{ex}})^2 + 2AB/k_{\text{ex}}})
 $$
 Specific representations of parameters for different cases
-![Result Image](assets/img/TTA_paramter.png)
+![Result Image](static/assets/img/TTA_paramter.png)
 
 c.Experimental fitting formula:
 $$
 \Phi_{\text{em}} = c + a*(1+(1-\sqrt{1+4*d*I_{\text{ex}}})/2*d*I_{\text{ex}})
 $$
 Model results compared with experimental results 
-![Result Image](assets/img/TTA_comparation.png)
+![Result Image](static/assets/img/TTA_comparation.png)
