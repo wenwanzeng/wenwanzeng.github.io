@@ -3,7 +3,7 @@
 She recently obtained her master’s degree in Physical Chemistry at the School of Chemical Sciences, University of Chinese Academy of Sciences, China.
 
 #### Email
-wenwanzen@163.com
+zengwenwan22@mails.ucas.ac.cn
 
 #### Education
 M.E., Physical Chemistry, University of Chinese Academy of Sciences, 2022—2025.\
@@ -39,7 +39,7 @@ $$
 $$
 
 Model results compared with experimental results 
-![Result Image](static/assets/img/TTA_comparation.png)(assets/img/TTA_comparation.png)
+![Result Image] (static/assets/img/TTA_comparation.png)
 
 
 [def]: https://img.shields.io/badge/senli1073-github-blue?logo=github
