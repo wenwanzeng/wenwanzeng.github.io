@@ -39,7 +39,7 @@ Model results compared with experimental results
 **Method**: Kinetic analysis.  
 **Results**: \
 Three-step cyclic mechanism
-![Three-step cyclic mechanism](/static/assets/img/Three_step.png)
+<img src="/static/assets/img/Three_step.png" style="width: 100%; height: auto;" />
 
 
 #### III Programmable Linearity of Organic All-Photonic Synapses for Neuromorphic Computing
