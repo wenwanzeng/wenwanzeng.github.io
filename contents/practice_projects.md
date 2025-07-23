@@ -1,4 +1,3 @@
-### Practice Projects
 
 ---
 
