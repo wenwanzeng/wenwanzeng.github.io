@@ -26,4 +26,20 @@ $$
 $$
 
 Model results compared with experimental results 
-![TTA result](/assets/img/TTA_comparation.png)
+![TTA result](/assets/img/TTA_comparation.png)\
+
+
+#### 3. Programmable Linearity of Organic All-Photonic Synapses for Neuromorphic Computing
+**Abstract**: Organic synaptic devices with optical transmission and computing capabilities are crucial for neuromorphic information processing. Organic all-optical synapses (OAPS) offer a promising alternative by utilizing inherent optical signals. However, the current mechanisms often rely on photochemical or photoisomerization mechanisms, which inherently introduce nonlinearity. We established a physical model based on the CT and CS states to explain the mechanism of a new type of low-linearity OAPS material, and constructed the relationship between structure and performance.
+
+**Method**: Kinetic analysis, organic all-optical synapses，charge-separated state.  
+**Results**: \
+a. CS state assisted emission model
+![CS state assisted emission model](/assets/img/CS_model.png)
+
+b. General formalism. \
+Under continuous illumination:
+
+$$
+I_{\text{out}} = \Phi_{P} \Phi_{\text{ISC}} k_{\text{ex}} + \Phi_{P} \Phi_{\text{ET}} k_{\text{ex}} \left[1 + \alpha e^{\lambda_1 t} + \beta e^{\lambda_2 t} \right]
+$$
