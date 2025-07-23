@@ -11,19 +11,22 @@ a. Two models, eleven cases
 b. General formalism： 
 
 $$
-I_{\text{em}} = N(Ck_{\text{ex}} + Ak_{\text{ex}} + B - \sqrt{B^2 + 2ABk_{\text{ex}}})
+I_{\text{em}} = N\left(Ck_{\text{ex}} + Ak_{\text{ex}} + B - \sqrt{B^2 + 2ABk_{\text{ex}}} \right)
 $$
+
 $$
-\Phi_{\text{em}} = N(C + A + B/k_{\text{ex}} - \sqrt{(B/k_{\text{ex}})^2 + 2AB/k_{\text{ex}}})
+\Phi_{\text{em}} = N\left(C + A + \frac{B}{k_{\text{ex}}} - \sqrt{\left( \frac{B}{k_{\text{ex}}} \right)^2 + \frac{2AB}{k_{\text{ex}}}} \right)
 $$
+
 Specific representations of parameters for different cases
 ![Parameters](/assets/img/TTA_parameter.png)
 
 c.Experimental fitting formula:
 
 $$
-\Phi_{\text{em}} = c + a*(1+(1-\sqrt{1+4*d*I_{\text{ex}}})/2*d*I_{\text{ex}})
+\Phi_{\text{em}} = c + a \left( 1 + \frac{1 - \sqrt{1 + 4d I_{\text{ex}}}}{2d I_{\text{ex}}} \right)
 $$
+
 
 Model results compared with experimental results 
 ![TTA result](/assets/img/TTA_comparation.png)\
