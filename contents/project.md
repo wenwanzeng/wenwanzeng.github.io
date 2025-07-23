@@ -29,7 +29,7 @@ $$
 
 
 Model results compared with experimental results 
-![TTA result](/assets/img/TTA_comparation.png)\
+![TTA result](/assets/img/TTA_comparation.png)
 
 
 #### 3. Programmable Linearity of Organic All-Photonic Synapses for Neuromorphic Computing
