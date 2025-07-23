@@ -35,6 +35,27 @@ window.addEventListener('DOMContentLoaded', event => {
         .then(response => response.text())
         .then(text => {
             const yml = jsyaml.load(text);
+            const navLinks = [
+            { id: 'home', configKey: 'nav-home', default: 'HOME' },
+            { id: 'projects', configKey: 'nav-projects', default: 'PROJECTS' },
+            { id: 'publications', configKey: 'nav-publications', default: 'PUBLICATIONS' },
+            { id: 'awards', configKey: 'nav-awards', default: 'AWARDS' },
+            { id: 'practice_projects', configKey: 'nav-practice_projects', default: 'PRACTICE PROJECTS' },
+        ];
+
+        const navContainer = document.getElementById('navbar-items');  // 这个在HTML里对应 <ul id="navbar-items">
+        if (navContainer) {
+            navLinks.forEach(link => {
+                const li = document.createElement('li');
+                li.className = 'nav-item';
+                const label = yml[link.configKey] || link.default;
+                li.innerHTML = `<a class="nav-link me-lg-3" href="#${link.id}">${label}</a>`;
+                navContainer.appendChild(li);
+            }
+
+
+
+            
             Object.keys(yml).forEach(key => {
                 try {
                     document.getElementById(key).innerHTML = yml[key];
