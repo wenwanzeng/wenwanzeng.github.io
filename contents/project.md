@@ -6,7 +6,10 @@
 **Method**: Kinetic modeling of triplet-triplet annihilation process, supported steady-state spectrum experiments and TDDFT simulations.  
 **Results**: \
 a. Two models, eleven cases
-![TTA model](/static/assets/img/TTA_model.png)
+
+<div style="max-width: 800px; margin: auto;">
+  <img src="/static/assets/img/TTA_model.png" alt="TTA model" style="width: 100%; height: auto;" />
+</div>
 
 
 b. General formalism： 
@@ -31,7 +34,10 @@ $$
 
 
 Model results compared with experimental results 
-![TTA result](/static/assets/img/TTA_comparation.png)
+<div style="max-width: 800px; margin: auto;">
+  <img src="/static/assets/img/TTA_comparation.png" alt="TTA result" style="width: 100%; height: auto;" />
+</div>
+
 
 
 #### 3. Programmable Linearity of Organic All-Photonic Synapses for Neuromorphic Computing
