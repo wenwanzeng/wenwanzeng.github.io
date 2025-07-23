@@ -1,9 +1,6 @@
-
-
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'publications','projects','practice_projects', 'awards']
-
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -14,7 +11,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 74,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -29,44 +26,42 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-
     // Yaml
     fetch(content_dir + config_file)
         .then(response => response.text())
         .then(text => {
             const yml = jsyaml.load(text);
-            const navLinks = [
-            { id: 'home', configKey: 'nav-home', default: 'HOME' },
-            { id: 'projects', configKey: 'nav-projects', default: 'PROJECTS' },
-            { id: 'publications', configKey: 'nav-publications', default: 'PUBLICATIONS' },
-            { id: 'awards', configKey: 'nav-awards', default: 'AWARDS' },
-            { id: 'practice_projects', configKey: 'nav-practice_projects', default: 'PRACTICE PROJECTS' },
-        ];
 
-        const navContainer = document.getElementById('navbar-items');  // 这个在HTML里对应 <ul id="navbar-items">
-        if (navContainer) {
-            navLinks.forEach(link => {
-                const li = document.createElement('li');
-                li.className = 'nav-item';
-                const label = yml[link.configKey] || link.default;
-                li.innerHTML = `<a class="nav-link me-lg-3" href="#${link.id}">${label}</a>`;
-                navContainer.appendChild(li);
+            // ✅ 插入导航项
+            const navLinks = [
+                { id: 'home', configKey: 'nav-home', default: 'HOME' },
+                { id: 'projects', configKey: 'nav-projects', default: 'PROJECTS' },
+                { id: 'publications', configKey: 'nav-publications', default: 'PUBLICATIONS' },
+                { id: 'awards', configKey: 'nav-awards', default: 'AWARDS' },
+                { id: 'practice_projects', configKey: 'nav-practice_projects', default: 'PRACTICE PROJECTS' },
+            ];
+
+            const navContainer = document.getElementById('navbar-items');
+            if (navContainer) {
+                navLinks.forEach(link => {
+                    const li = document.createElement('li');
+                    li.className = 'nav-item';
+                    const label = yml[link.configKey] || link.default;
+                    li.innerHTML = `<a class="nav-link me-lg-3" href="#${link.id}">${label}</a>`;
+                    navContainer.appendChild(li);
+                });
             }
 
-
-
-            
+            // ✅ 替换页面上对应的内容
             Object.keys(yml).forEach(key => {
                 try {
                     document.getElementById(key).innerHTML = yml[key];
                 } catch {
                     console.log("Unknown id and value: " + key + "," + yml[key].toString())
                 }
-
             })
         })
         .catch(error => console.log(error));
-
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
@@ -81,6 +76,6 @@ window.addEventListener('DOMContentLoaded', event => {
                 MathJax.typeset();
             })
             .catch(error => console.log(error));
-    })
+    });
 
-}); 
+});
