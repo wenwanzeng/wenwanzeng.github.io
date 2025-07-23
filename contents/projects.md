@@ -19,7 +19,7 @@ $$
 $$
 
 Specific representations of parameters for different cases
-![Parameters](/static/assets/img/TTA_parameter.png)
+<img src="/static/assets/img/TTA_parameter.png" style="width: 100%; height: auto;" />
 
 
 c.Experimental fitting formula:
@@ -48,7 +48,8 @@ Three-step cyclic mechanism
 **Method**: Kinetic analysis，quantum calculation.  
 **Results**: \
 a. CS state assisted emission model
-![CS state assisted emission model](/static/assets/img/CS_model.png)
+<img src="/static/assets/img/CS_model.png" style="width: 100%; height: auto;" />
+
 
 b. General formalism. \
 Under continuous illumination:
