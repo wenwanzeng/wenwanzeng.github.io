@@ -187,6 +187,17 @@
         </div>
     </footer>
 
+    <!-- JS to load Project.md -->
+    <script>
+        fetch('contents/project.md')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('projects-md').innerHTML = marked.parse(text);
+                if (typeof MathJax !== 'undefined') MathJax.typeset(); // for math rendering
+            });
+    </script>
+
+    
 </body>
 
 </html>
