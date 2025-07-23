@@ -18,11 +18,12 @@ A coarse-grained model of peptides in water environment was constructed using th
 
 Snapshots of the Simulation
 
-<div style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 10px;">
-  <img src="../static/assets/img/t0.png" alt="t=0 ns" style="width: 100%; max-width: 30%; height: auto;" />
-  <img src="../static/assets/img/gjf.gif" alt="GJF gif" style="width: 100%; max-width: 30%; height: auto;" />
-  <img src="../static/assets/img/t25.png" alt="t=25 ns" style="width: 100%; max-width: 30%; height: auto;" />
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+  <img src="../static/assets/img/t0.png" alt="t=0 ns" style="max-width: 32%; height: auto; flex-grow: 1;" />
+  <img src="../static/assets/img/gjf.gif" alt="GJF gif" style="max-width: 32%; height: auto; flex-grow: 1;" />
+  <img src="../static/assets/img/t25.png" alt="t=25 ns" style="max-width: 32%; height: auto; flex-grow: 1;" />
 </div>
+
 
 
 
