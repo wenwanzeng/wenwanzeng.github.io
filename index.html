@@ -178,16 +178,6 @@
     </section>
     <!-- Awards -->
     
-    <!-- Practice Projects -->
-    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="practice_projects">
-        <div class="container px-5">
-            <header>
-                <h2 id="practice-projects-subtitle"><i class="bi bi-terminal-fill"></i> PRACTICE PROJECTS</h2>
-            </header>
-            <div class="main-body" id="practice-projects-md"></div>
-        </div>
-    </section>
-
     <!-- Footer-->
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
@@ -209,6 +199,17 @@
                 if (typeof MathJax !== 'undefined') MathJax.typeset(); // for math rendering
             });
     </script>
+
+    <!-- JS to load Practice Projects -->
+    <script>
+        fetch('contents/practice_projects.md')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('practice-projects-md').innerHTML = marked.parse(text);
+                if (typeof MathJax !== 'undefined') MathJax.typeset();
+            });
+    </script>
+
 
     
 </body>
