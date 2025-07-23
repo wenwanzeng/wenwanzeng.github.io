@@ -10909,6 +10909,8 @@ footer a:hover, footer a:active, footer a:focus {
   text-decoration: underline;
 }
 
-
+body {
+    padding-top: 4.5rem;
+}
 
 
