@@ -1,6 +1,6 @@
 
 
-She recently obtained her master’s degree in Physical Chemistry at the School of Chemical Sciences, University of Chinese Academy of Sciences, China.
+She is currently working as a Scientific Assistant in Physical Chemistry at the School of Chemical Sciences, University of Chinese Academy of Sciences (UCAS), China.
 
 #### Email
 zengwenwan22@mails.ucas.ac.cn
