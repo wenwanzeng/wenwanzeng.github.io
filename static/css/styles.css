@@ -10913,4 +10913,53 @@ body {
     padding-top: 4.5rem;
 }
 
+/* ===== Projects dropdown (auto-generated) ===== */
+.has-dropdown { position: relative; }
+
+/* 默认隐藏 */
+.has-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 220px;
+  margin-top: 8px;
+  padding: 10px 0;
+  list-style: none;
+
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  z-index: 9999;
+}
+
+.has-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.has-dropdown .dropdown-menu li a:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* 桌面端：hover 显示 */
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* 移动端：点击打开（JS 会加 open class） */
+.has-dropdown.open .dropdown-menu { display: block; }
+
+/* 平滑滚动（可选） */
+html { scroll-behavior: smooth; }
+
+/* 如果顶部导航是 fixed/sticky，避免跳转被遮挡（把 90px 改成你的导航高度） */
+#projects, #projects-md h3, #projects-md h4 { scroll-margin-top: 90px; }
+
+
 
