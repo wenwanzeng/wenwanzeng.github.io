@@ -10959,7 +10959,7 @@ body {
 html { scroll-behavior: smooth; }
 
 /* 如果顶部导航是 fixed/sticky，避免跳转被遮挡（把 90px 改成你的导航高度） */
-#projects, #projects-md h3, #projects-md h4 { scroll-margin-top: 90px; }
+#projects, #projects-md h3 { scroll-margin-top: 90px; }
 
 
 
