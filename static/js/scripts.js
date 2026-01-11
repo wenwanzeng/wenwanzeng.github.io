@@ -21,31 +21,36 @@ window.addEventListener('DOMContentLoaded', () => {
     return (s || '')
       .toLowerCase()
       .trim()
-      // 允许中文、字母数字、下划线、空格、连字符
       .replace(/[^\w\u4e00-\u9fa5\s-]/g, '')
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-');
   }
 
-  function buildProjectsDropdown() {
-    // 导航里指向 #projects 的链接（你的导航就是用这个 href 生成的）
+  // ------------------------------
+  // Projects dropdown (retry until ready)
+  // ------------------------------
+  let dropdownBuilt = false;
+  let dropdownTimer = null;
+
+  function tryBuildProjectsDropdown() {
+    if (dropdownBuilt) return true;
+
+    // 1) nav link must exist (nav is inserted after config.yml is loaded)
     const navLink = document.querySelector('a[href="#projects"]');
-    if (!navLink) {
-      console.warn('[WARN] nav link a[href="#projects"] not found');
-      return;
-    }
+    if (!navLink) return false;
+
+    // 2) headings must exist (projects.md must be rendered into #projects-md)
+    // your project titles are #### => h4; also support h3
+    const headings = document.querySelectorAll('#projects-md h4, #projects-md h3');
+    if (!headings.length) return false;
 
     const host = navLink.closest('li') || navLink.parentElement;
-    if (!host) return;
+    if (!host) return false;
 
-    // 防止重复创建
-    if (host.querySelector('.dropdown-menu')) return;
-
-    // 你的 projects.md 用 #### => h4（也兼容 h3）
-    const headings = document.querySelectorAll('#projects-md h4, #projects-md h3');
-    if (!headings.length) {
-      console.warn('[WARN] no headings found under #projects-md (h4/h3)');
-      return;
+    // avoid duplicates
+    if (host.querySelector('.dropdown-menu')) {
+      dropdownBuilt = true;
+      return true;
     }
 
     host.classList.add('has-dropdown');
@@ -57,7 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
       const title = (h.textContent || '').trim();
       if (!title) return;
 
-      // 给标题补 id，方便锚点跳转
       if (!h.id) {
         const base = slugify(title) || `proj-${idx + 1}`;
         h.id = base.startsWith('proj-') ? base : `proj-${base}`;
@@ -72,11 +76,11 @@ window.addEventListener('DOMContentLoaded', () => {
       menu.appendChild(li);
     });
 
-    if (!menu.children.length) return;
+    if (!menu.children.length) return false;
 
     host.appendChild(menu);
 
-    // 移动端：点 PROJECTS 展开/收起下拉（不直接跳到 #projects）
+    // mobile: click to toggle (desktop uses hover via CSS)
     navLink.addEventListener('click', (e) => {
       const isMobile = window.matchMedia('(max-width: 991px)').matches;
       if (isMobile) {
@@ -84,6 +88,32 @@ window.addEventListener('DOMContentLoaded', () => {
         host.classList.toggle('open');
       }
     });
+
+    dropdownBuilt = true;
+    return true;
+  }
+
+  function scheduleProjectsDropdown() {
+    if (dropdownBuilt) return;
+    if (dropdownTimer) return;
+
+    let tries = 0;
+    dropdownTimer = setInterval(() => {
+      tries += 1;
+
+      if (tryBuildProjectsDropdown()) {
+        clearInterval(dropdownTimer);
+        dropdownTimer = null;
+        return;
+      }
+
+      // stop after ~10s (50 * 200ms) to avoid infinite polling
+      if (tries >= 50) {
+        clearInterval(dropdownTimer);
+        dropdownTimer = null;
+        console.warn('[WARN] Projects dropdown not built: navLink or headings still missing.');
+      }
+    }, 200);
   }
 
   function safeTypesetMathJax() {
@@ -109,11 +139,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Collapse responsive navbar when toggler is visible
   const navbarToggler = document.body.querySelector('.navbar-toggler');
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-  );
-  responsiveNavItems.forEach((responsiveNavItem) => {
-    responsiveNavItem.addEventListener('click', () => {
+  const responsiveNavItems = [].slice.call(document.querySelectorAll('#navbarResponsive .nav-link'));
+  responsiveNavItems.forEach((item) => {
+    item.addEventListener('click', () => {
       if (navbarToggler && window.getComputedStyle(navbarToggler).display !== 'none') {
         navbarToggler.click();
       }
@@ -121,14 +149,13 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------
-  // Load config.yml and build nav + replace labels
+  // Load config.yml: build nav + replace labels
   // ------------------------------
   fetch(content_dir + config_file)
-    .then((response) => response.text())
-    .then((text) => {
+    .then(r => r.text())
+    .then(text => {
       const yml = window.jsyaml?.load ? jsyaml.load(text) : {};
 
-      // 插入导航项
       const navLinks = [
         { id: 'home', configKey: 'nav-home', default: 'HOME' },
         { id: 'projects', configKey: 'nav-projects', default: 'PROJECTS' },
@@ -139,62 +166,54 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const navContainer = document.getElementById('navbar-items');
       if (navContainer) {
-        navLinks.forEach((link) => {
+        navLinks.forEach(link => {
           const li = document.createElement('li');
           li.className = 'nav-item';
-
           const label = (yml && yml[link.configKey]) ? yml[link.configKey] : link.default;
-
           li.innerHTML = `<a class="nav-link me-lg-3" href="#${link.id}">${label}</a>`;
           navContainer.appendChild(li);
         });
       } else {
-        console.warn('[WARN] #navbar-items not found, nav links not inserted');
+        console.warn('[WARN] #navbar-items not found');
       }
 
-      // 替换页面上对应的内容（key 对应某些 id 的文本）
+      // Replace labels by id (guarded)
       if (yml && typeof yml === 'object') {
-        Object.keys(yml).forEach((key) => {
+        Object.keys(yml).forEach(key => {
           const el = document.getElementById(key);
-          if (el) {
-            el.innerHTML = yml[key];
-          } else {
-            // 不是每个 key 都一定有对应 id，保留日志即可
-            // console.log("Unknown id and value: " + key + "," + String(yml[key]));
-          }
+          if (el) el.innerHTML = yml[key];
         });
       }
+
+      // nav is ready now -> try to build dropdown
+      scheduleProjectsDropdown();
     })
-    .catch((error) => console.log(error));
+    .catch(err => console.log(err));
 
   // ------------------------------
   // Load markdown sections and render
   // ------------------------------
   if (window.marked?.use) {
     marked.use({ mangle: false, headerIds: false });
-  } else {
-    console.warn('[WARN] marked not found');
   }
 
   section_names.forEach((name) => {
     fetch(content_dir + name + '.md')
-      .then((response) => response.text())
-      .then((markdown) => {
+      .then(r => r.text())
+      .then(markdown => {
         const html = window.marked?.parse ? marked.parse(markdown) : markdown;
 
-        // 写入对应容器
+        // render markdown
         const ok = safeSetHTMLById(name + '-md', html);
         if (!ok) return;
 
-        // ✅ projects 内容渲染完成后立刻生成下拉（无需 observer）
-        if (name === 'projects') {
-          buildProjectsDropdown();
-        }
+        // projects content ready -> try to build dropdown
+        if (name === 'projects') scheduleProjectsDropdown();
       })
       .then(() => {
         safeTypesetMathJax();
       })
-      .catch((error) => console.log(error));
+      .catch(err => console.log(err));
   });
 
 });
