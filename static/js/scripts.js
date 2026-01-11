@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', event => {
     if (li.querySelector(".dropdown-menu")) return;
 
     // 从 projects-md 里抓项目标题（h3）
-    const headings = document.querySelectorAll("#projects-md h4, #projects-md h3");
+    const headings = document.querySelectorAll("#projects-md h3");
     if (!headings.length) return;
 
     li.classList.add("has-dropdown");
