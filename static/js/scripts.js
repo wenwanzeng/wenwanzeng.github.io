@@ -26,93 +26,97 @@ window.addEventListener('DOMContentLoaded', () => {
       .replace(/-+/g, '-');
   }
 
-// ------------------------------
-// Generic dropdown builder (retry until ready)
-// ------------------------------
-const dropdownBuiltMap = {};
-const dropdownTimerMap = {};
+  // ------------------------------
+  // Generic dropdown builder
+  // ------------------------------
+  const dropdownBuiltMap = {};
+  const dropdownTimerMap = {};
 
-function tryBuildDropdown(navId, sectionId, prefix) {
-  if (dropdownBuiltMap[navId]) return true;
+  function tryBuildDropdown(navId, sectionId, prefix) {
+    if (dropdownBuiltMap[navId]) return true;
 
-  // 1) nav link must exist
-  const navLink = document.querySelector(`a[href="#${navId}"]`);
-  if (!navLink) return false;
+    // 1) nav link must exist
+    const navLink = document.querySelector(`a[href="#${navId}"]`);
+    if (!navLink) return false;
 
-  // 2) headings must exist in the rendered markdown section
-  const headings = document.querySelectorAll(`#${sectionId}-md h4, #${sectionId}-md h3`);
-  if (!headings.length) return false;
+    // 2) headings must exist in rendered markdown
+    // Support h3 and h4 as dropdown source headings
+    const headings = document.querySelectorAll(`#${sectionId}-md h4, #${sectionId}-md h3`);
+    if (!headings.length) return false;
 
-  const host = navLink.closest('li') || navLink.parentElement;
-  if (!host) return false;
+    const host = navLink.closest('li') || navLink.parentElement;
+    if (!host) return false;
 
-  // avoid duplicates
-  if (host.querySelector('.dropdown-menu')) {
+    // Avoid duplicate dropdown menus
+    if (host.querySelector('.dropdown-menu')) {
+      dropdownBuiltMap[navId] = true;
+      return true;
+    }
+
+    host.classList.add('has-dropdown');
+
+    const menu = document.createElement('ul');
+    menu.className = 'dropdown-menu';
+
+    headings.forEach((h, idx) => {
+      const title = (h.textContent || '').trim();
+      if (!title) return;
+
+      if (!h.id) {
+        const base = slugify(title) || `${prefix}-${idx + 1}`;
+        h.id = base.startsWith(prefix) ? base : `${prefix}-${base}`;
+      }
+
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.textContent = title;
+
+      const li = document.createElement('li');
+      li.appendChild(a);
+      menu.appendChild(li);
+    });
+
+    if (!menu.children.length) return false;
+
+    host.appendChild(menu);
+
+    // Mobile: click to toggle dropdown
+    // Desktop: hover is handled by CSS
+    navLink.addEventListener('click', (e) => {
+      const isMobile = window.matchMedia('(max-width: 991px)').matches;
+      if (isMobile) {
+        e.preventDefault();
+        host.classList.toggle('open');
+      }
+    });
+
     dropdownBuiltMap[navId] = true;
     return true;
   }
 
-  host.classList.add('has-dropdown');
+  function scheduleDropdown(navId, sectionId, prefix) {
+    if (dropdownBuiltMap[navId]) return;
+    if (dropdownTimerMap[navId]) return;
 
-  const menu = document.createElement('ul');
-  menu.className = 'dropdown-menu';
+    let tries = 0;
+    dropdownTimerMap[navId] = setInterval(() => {
+      tries += 1;
 
-  headings.forEach((h, idx) => {
-    const title = (h.textContent || '').trim();
-    if (!title) return;
+      if (tryBuildDropdown(navId, sectionId, prefix)) {
+        clearInterval(dropdownTimerMap[navId]);
+        dropdownTimerMap[navId] = null;
+        return;
+      }
 
-    if (!h.id) {
-      const base = slugify(title) || `${prefix}-${idx + 1}`;
-      h.id = base.startsWith(prefix) ? base : `${prefix}-${base}`;
-    }
+      // Stop after ~10s
+      if (tries >= 50) {
+        clearInterval(dropdownTimerMap[navId]);
+        dropdownTimerMap[navId] = null;
+        console.warn(`[WARN] Dropdown not built for ${navId}: navLink or headings still missing.`);
+      }
+    }, 200);
+  }
 
-    const a = document.createElement('a');
-    a.href = `#${h.id}`;
-    a.textContent = title;
-
-    const li = document.createElement('li');
-    li.appendChild(a);
-    menu.appendChild(li);
-  });
-
-  if (!menu.children.length) return false;
-
-  host.appendChild(menu);
-
-  // mobile: click to toggle
-  navLink.addEventListener('click', (e) => {
-    const isMobile = window.matchMedia('(max-width: 991px)').matches;
-    if (isMobile) {
-      e.preventDefault();
-      host.classList.toggle('open');
-    }
-  });
-
-  dropdownBuiltMap[navId] = true;
-  return true;
-}
-
-function scheduleDropdown(navId, sectionId, prefix) {
-  if (dropdownBuiltMap[navId]) return;
-  if (dropdownTimerMap[navId]) return;
-
-  let tries = 0;
-  dropdownTimerMap[navId] = setInterval(() => {
-    tries += 1;
-
-    if (tryBuildDropdown(navId, sectionId, prefix)) {
-      clearInterval(dropdownTimerMap[navId]);
-      dropdownTimerMap[navId] = null;
-      return;
-    }
-
-    if (tries >= 50) {
-      clearInterval(dropdownTimerMap[navId]);
-      dropdownTimerMap[navId] = null;
-      console.warn(`[WARN] Dropdown not built for ${navId}: navLink or headings still missing.`);
-    }
-  }, 200);
-}
   function safeTypesetMathJax() {
     try {
       if (window.MathJax && typeof MathJax.typeset === 'function') {
@@ -182,8 +186,9 @@ function scheduleDropdown(navId, sectionId, prefix) {
         });
       }
 
-      // nav is ready now -> try to build dropdown
-      scheduleProjectsDropdown();
+      // Nav is ready -> try to build dropdowns
+      scheduleDropdown('projects', 'projects', 'proj');
+      scheduleDropdown('practice_projects', 'practice_projects', 'practice');
     })
     .catch(err => console.log(err));
 
@@ -200,12 +205,18 @@ function scheduleDropdown(navId, sectionId, prefix) {
       .then(markdown => {
         const html = window.marked?.parse ? marked.parse(markdown) : markdown;
 
-        // render markdown
+        // Render markdown
         const ok = safeSetHTMLById(name + '-md', html);
         if (!ok) return;
 
-        // projects content ready -> try to build dropdown
-        if (name === 'projects') scheduleProjectsDropdown();
+        // Build dropdowns when related sections are ready
+        if (name === 'projects') {
+          scheduleDropdown('projects', 'projects', 'proj');
+        }
+
+        if (name === 'practice_projects') {
+          scheduleDropdown('practice_projects', 'practice_projects', 'practice');
+        }
       })
       .then(() => {
         safeTypesetMathJax();
