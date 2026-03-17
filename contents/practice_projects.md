@@ -38,3 +38,14 @@ T-T absorption spectrum of the test molecule:
 
 
 ---
+
+---
+### Lennard-Jones Monte Carlo Practice
+
+This practice project implements a Metropolis Monte Carlo simulation for a Lennard-Jones particle system in a periodic box, achieving lattice initialization, trial-move sampling, energy evolution analysis, radial distribution function \(g(r)\) calculation, and final-configuration visualization.You can find the source code on [GitHub](https://github.com/wenwanzeng/Practice_Record)
+
+Monte Carlo simulation result:
+<img src="/static/assets/img/monte_carlo_simulation.png" style="width: 100%; height: auto;" />
+
+
+---
