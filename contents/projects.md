@@ -1,5 +1,17 @@
 
 ---
+Optoelectronic devices are opening new opportunities for next-generation intelligent systems, including intelligent sensing, neuromorphic computing, and bioelectronic interfaces. Among these applications, artificial neural synapses are particularly important because they aim to mimic the signal transmission and weight modulation functions of biological synapses, providing a material and device basis for neuromorphic information processing.
+
+In a typical artificial synapse, three key processes are involved: presynaptic input, synaptic weight modulation, and postsynaptic output. When optical signals are used as both the input and output, the system can be regarded as an all-photonic synapse. Compared with electrically driven synaptic devices, all-photonic synapses offer the possibility of direct optical communication, low crosstalk, high bandwidth, and light-controlled information processing.
+
+Materials used in all-photonic synapses can be broadly classified into transmittance-based and photoluminescence-based systems. Among photoluminescence-based systems, organic emitters are especially attractive because their photophysical properties can be finely tuned through molecular design, host–guest engineering, and excited-state regulation. They also offer advantages such as solution processability, structural diversity, and potentially low energy consumption.
+<img src="/static/assets/img/intro1.png" style="width: 100%; height: auto;" />
+
+My research focuses on organic all-photonic synapses based on triplet-mediated luminescence processes, especially triplet–triplet annihilation and room-temperature phosphorescence. Rather than only describing the observed synaptic behaviors phenomenologically, my work aims to understand how microscopic excited-state kinetics give rise to macroscopic device functions, such as nonlinear optical response, cumulative emission, memory effect, and response linearity.
+
+Through kinetic modeling, analytical derivation, quantum-chemical calculation, and comparison with experimental results, I seek to build a clear connection between material structure, kinetic processes, and synaptic performance. This kinetic perspective provides not only a mechanistic explanation for existing organic all-photonic synapses, but also possible design principles for developing high-performance organic neuromorphic materials.
+<img src="/static/assets/img/intro2.png" style="width: 100%; height: auto;" />
+
 
 ### I. Toward a comprehensive understanding of excitation-dependent luminescence in triplet-triplet annihilation
 **Abstract**: Triplet–triplet annihilation (TTA) is widely used in optical up-conversion and exciton-based devices due to its high energy efficiency.However, traditional kinetic models fail to capture the complex dynamics observed in many one-component organic TTA systems.This work proposes a generalized TTA kinetic model by incorporating additional excited states under different conditions and deriving a new formalism for luminescence intensity.The model provides a more universal criterion for identifying TTA behavior and offers a practical tool for analyzing systems with non-traditional kinetics.
