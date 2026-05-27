@@ -30,13 +30,11 @@ Through kinetic modeling, analytical derivation, quantum-chemical calculation, a
 **Abstract**: In 2023, [Chen et al.](https://doi.org/10.1021/jacs.2c13471) reported the first organic all-optical synapse, achieving contactless optical information input and output. Under aerobic conditions, the fluorescence intensity of the organic all-optical synapse reported by them would continuously increase with the duration of excitation light irradiation (accumulative effect), and after a brief interruption of light irradiation, the initial luminescence intensity after re-excitation would be stronger than the previous one (memory effect). 
 
 **Results**: \
-
 <img src="/static/assets/img/cumulative_memory.png" style="width: 100%; height: auto;" />
-*Figure 1. Stepwise activation of TTA-mediated channels under different excitation strengths. The model explains why cumulative emission appears only above a threshold excitation condition.*
+Figure 1. Stepwise activation of TTA-mediated channels under different excitation strengths. The model explains why cumulative emission appears only above a threshold excitation condition.
 
 <img src="/static/assets/img/Three_step.png" style="width: 100%; height: auto;" />
-
-*Figure 2. Proposed three-step mechanism for TTA-induced organic all-photonic synapses: ordinary emission below threshold, TTA-channel activation above threshold, and slow depletion of intermediate states during the dark interval.*
+Figure 2. Proposed three-step mechanism for TTA-induced organic all-photonic synapses: ordinary emission below threshold, TTA-channel activation above threshold, and slow depletion of intermediate states during the dark interval.
 
 ---
 
@@ -47,12 +45,11 @@ Through kinetic modeling, analytical derivation, quantum-chemical calculation, a
 Building on this mechanistic understanding, I further connected the kinetic solution with the empirical response-linearity equation used in synaptic devices. The analysis shows that response linearity is governed by specific slow kinetic processes in the host–guest excited-state network. In particular, reducing the rate constant associated with CT-to-local-triplet conversion can improve response linearity more effectively. By combining this kinetic insight with Marcus–Levich-type analysis, I proposed a host–guest energy descriptor that links molecular energetics, kinetic parameters, and synaptic performance. This work establishes a structure–kinetics–property relationship for RTP-induced organic all-photonic synapses and provides a molecular design principle for developing high-performance organic neuromorphic materials.
 
 **Results**: \
-
 <img src="/static/assets/img/CS_model.png" style="width: 100%; height: auto;" />
-*Figure 1. Host–guest RTP kinetic model involving charge-transfer and charge-separated intermediate states. These states act as kinetic reservoirs that enable long-lived phosphorescence and cumulative emission.*
+Figure 1. Host–guest RTP kinetic model involving charge-transfer and charge-separated intermediate states. These states act as kinetic reservoirs that enable long-lived phosphorescence and cumulative emission.
 
 
 <img src="/static/assets/img/CS_OAPS.png" style="width: 100%; height: auto;" />
-*Figure 2. Structure–kinetics–property relationship for RTP-induced organic all-photonic synapses. The host–guest energy descriptor regulates key kinetic parameters, which further determine response linearity and synaptic performance.*
+Figure 2. Structure–kinetics–property relationship for RTP-induced organic all-photonic synapses. The host–guest energy descriptor regulates key kinetic parameters, which further determine response linearity and synaptic performance.
 
 ---
