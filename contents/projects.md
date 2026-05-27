@@ -13,66 +13,46 @@ Through kinetic modeling, analytical derivation, quantum-chemical calculation, a
 <img src="/static/assets/img/intro2.png" style="width: 100%; height: auto;" />
 
 
-### I. Toward a comprehensive understanding of excitation-dependent luminescence in triplet-triplet annihilation
-**Abstract**: Triplet–triplet annihilation (TTA) is widely used in optical up-conversion and exciton-based devices due to its high energy efficiency.However, traditional kinetic models fail to capture the complex dynamics observed in many one-component organic TTA systems.This work proposes a generalized TTA kinetic model by incorporating additional excited states under different conditions and deriving a new formalism for luminescence intensity.The model provides a more universal criterion for identifying TTA behavior and offers a practical tool for analyzing systems with non-traditional kinetics.
+### I. Kinetic Origin of Nontraditional Nonlinearity in TTA-Induced Organic All-Photonic Synapses
+**Abstract**: Triplet-triplet annihilation is usually associated with a characteristic excitation-power dependence, where the double-logarithmic slope of emission intensity changes from approximately 2 to 1. However, the reported TTA-induced organic all-photonic synapse based on S2OC shows a different nonlinear behavior, with the slope changing from about 1.3 to 1.9. To understand this unusual response, I constructed a series of kinetic models covering different TTA-mediated luminescence pathways, including low-state and high-state emission models, oxygen-involved processes, singlet-oxygen-mediated channels, and triplet-pair pathways. By solving the corresponding rate equations and comparing steady and transient luminescence, I found that the nontraditional nonlinear response cannot be fully explained by steady-state TTA theory. Instead, it originates from unsteady luminescence caused by the transient accumulation and depletion of triplet-mediated excited states. This work provides a kinetic explanation for the nonlinear optical response of TTA-induced organic all-photonic synapses.
 
 **Method**: Kinetic modeling of triplet-triplet annihilation process, supported steady-state spectrum experiments and TDDFT simulations.  
 **Results**: \
-a. Two models, eleven cases
 <img src="/static/assets/img/TTA_model.png" style="width: 100%; height: auto;" />
+*Figure 1. Kinetic models constructed to describe possible TTA-mediated luminescence pathways. The models distinguish low-state and high-state emission channels and include different roles of oxygen, singlet oxygen, and triplet-pair states.*
 
-b. General formalism： 
-
-$$
-I_{\text{em}} = N\left(Ck_{\text{ex}} + Ak_{\text{ex}} + B - \sqrt{B^2 + 2ABk_{\text{ex}}} \right)
-$$
-
-$$
-\Phi_{\text{em}} = N\left(C + A + \frac{B}{k_{\text{ex}}} - \sqrt{\left( \frac{B}{k_{\text{ex}}} \right)^2 + \frac{2AB}{k_{\text{ex}}}} \right)
-$$
-
-Specific representations of parameters for different cases
-<img src="/static/assets/img/TTA_parameter.png" style="width: 100%; height: auto;" />
-
-
-c.Experimental fitting formula:
-
-$$
-\Phi_{\text{em}} = c + a \left( 1 + \frac{1 - \sqrt{1 + 4d I_{\text{ex}}}}{2d I_{\text{ex}}} \right)
-$$
-
-
-Model results compared with experimental results 
-<img src="/static/assets/img/TTA_comparation.png" style="width: 100%; height: auto;" />
-
+<img src="/static/assets/img/TTA_S2OC.png" style="width: 100%; height: auto;" />
+*Figure 2. Comparison between steady-state and unsteady luminescence. The unusual slope change observed in S2OC is reproduced only when transient luminescence is considered, indicating that the nonlinear response originates from time-dependent triplet kinetics.*
 
 ---
 
-### II Mechanism of organic phosphorescent synapse 
-**Abstract**: In 2023, [Chen et al.](https://doi.org/10.1021/jacs.2c13471) reported the first organic all-optical synapse, achieving contactless optical information input and output. Under aerobic conditions, the fluorescence intensity of the organic all-optical synapse reported by them would continuously increase with the duration of excitation light irradiation (accumulative effect), and after a brief interruption of light irradiation, the initial luminescence intensity after re-excitation would be stronger than the previous one (memory effect). They proved that the three processes of triplet state production, TTA occurrence, and oxygen existed in the behavior of the optical synapse, and attributed the properties of the optical synapse to a process through which the concentration of S₃ excitons was constantly replenished, which included:  (i) ISC (S₁ → T₁) and ET (³O₂ + T₁ → ¹O₂ + S₀),  (ii) TTA (T₁ + T₁ → T₉ + S₀), and  (iii) ET (¹O₂ + T₉ → S₃ + ³O₂),  and studied the influence of ISC on the synaptic performance. Therefore, my work started from the dynamics, obtained the changes in luminescence intensity over time through non-steady-state solutions, the changes in luminescence intensity with the incident light intensity at the non-steady-state stage, and finally constructed a three-step cyclic mechanism to explain the synaptic effect and cumulative effect.
+### II. Mechanism of Cumulative and Memory Effects in TTA-Induced Organic All-Photonic Synapses 
+**Abstract**: In 2023, [Chen et al.](https://doi.org/10.1021/jacs.2c13471) reported the first organic all-optical synapse, achieving contactless optical information input and output. Under aerobic conditions, the fluorescence intensity of the organic all-optical synapse reported by them would continuously increase with the duration of excitation light irradiation (accumulative effect), and after a brief interruption of light irradiation, the initial luminescence intensity after re-excitation would be stronger than the previous one (memory effect). 
 
-
-**Method**: Kinetic analysis.  
 **Results**: \
-Three-step cyclic mechanism
+
+<img src="/static/assets/img/cumulative_memory.png" style="width: 100%; height: auto;" />
+*Figure 1. Stepwise activation of TTA-mediated channels under different excitation strengths. The model explains why cumulative emission appears only above a threshold excitation condition.*
+
 <img src="/static/assets/img/Three_step.png" style="width: 100%; height: auto;" />
 
+*Figure 2. Proposed three-step mechanism for TTA-induced organic all-photonic synapses: ordinary emission below threshold, TTA-channel activation above threshold, and slow depletion of intermediate states during the dark interval.*
+
 ---
 
-### III Programmable Linearity of Organic All-Photonic Synapses for Neuromorphic Computing
-**Abstract**: Organic synaptic devices with optical transmission and computing capabilities are crucial for neuromorphic information processing. Organic all-optical synapses (OAPS) offer a promising alternative by utilizing inherent optical signals. However, the current mechanisms often rely on photochemical or photoisomerization mechanisms, which inherently introduce nonlinearity. We established a physical model based on the CT and CS states to explain the mechanism of a new type of low-linearity OAPS material, and constructed the relationship between structure and performance.
+### III. Kinetic Mechanism and Molecular Design Strategy for RTP-Induced Organic All-Photonic Synapses
 
-**Method**: Kinetic analysis，quantum calculation.  
+**Abstract**: Host–guest room-temperature phosphorescence systems are promising materials for organic all-photonic synapses because their long-lived triplet-related states can store excitation history and generate cumulative emission under repeated or continuous irradiation. However, long phosphorescence lifetime alone is not sufficient to explain synaptic performance, especially the differences in cumulative behavior and response linearity among different host–guest systems. To address this problem, I constructed a kinetic model that introduces charge-transfer and charge-separated intermediate states into the RTP process. These states act as kinetic reservoirs that regulate both long-lived phosphorescence decay and cumulative emission. By solving the rate equations under post-excitation and continuous-wave excitation conditions, I identified the key kinetic requirement for RTP-induced synaptic behavior: moderate CT-to-CS conversion together with slow CS depletion.
+
+Building on this mechanistic understanding, I further connected the kinetic solution with the empirical response-linearity equation used in synaptic devices. The analysis shows that response linearity is governed by specific slow kinetic processes in the host–guest excited-state network. In particular, reducing the rate constant associated with CT-to-local-triplet conversion can improve response linearity more effectively. By combining this kinetic insight with Marcus–Levich-type analysis, I proposed a host–guest energy descriptor that links molecular energetics, kinetic parameters, and synaptic performance. This work establishes a structure–kinetics–property relationship for RTP-induced organic all-photonic synapses and provides a molecular design principle for developing high-performance organic neuromorphic materials.
+
 **Results**: \
-a. CS state assisted emission model
+
 <img src="/static/assets/img/CS_model.png" style="width: 100%; height: auto;" />
+*Figure 1. Host–guest RTP kinetic model involving charge-transfer and charge-separated intermediate states. These states act as kinetic reservoirs that enable long-lived phosphorescence and cumulative emission.*
 
 
-b. General formalism. \
-Under continuous illumination:
-
-$$
-I_{\text{out}} = \Phi_{P} \Phi_{\text{ISC}} k_{\text{ex}} + \Phi_{P} \Phi_{\text{ET}} k_{\text{ex}} \left[1 + \alpha e^{\lambda_1 t} + \beta e^{\lambda_2 t} \right]
-$$
+<img src="/static/assets/img/CS_OAPS.png" style="width: 100%; height: auto;" />
+*Figure 2. Structure–kinetics–property relationship for RTP-induced organic all-photonic synapses. The host–guest energy descriptor regulates key kinetic parameters, which further determine response linearity and synaptic performance.*
 
 ---
