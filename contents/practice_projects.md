@@ -1,5 +1,23 @@
 
 ---
+#### Markov State Models and Kinetic Monte Carlo
+
+I systematically studied Markov state models and kinetic Monte Carlo methods, and organized my understanding into a structured presentation. This work is part of my self-directed preparation for biomolecular dynamics, coarse-grained modeling, and multiscale simulation.
+
+<div class="slide-viewer" data-slide-dir="static/slides/msm-kmc/msm-kmc" data-total-slides="30">
+  <button class="slide-btn prev-slide" type="button">‹</button>
+
+  <div class="slide-frame">
+    <img class="slide-image" src="static/slides/msm-kmc/msm-kmc/slide01.png" alt="MSM and kMC presentation slide">
+  </div>
+
+  <button class="slide-btn next-slide" type="button">›</button>
+</div>
+
+<div class="slide-info">
+  <span class="slide-counter">1 / 30</span>
+</div>
+
 
 #### Host–Guest Multiscale Simulation
 
