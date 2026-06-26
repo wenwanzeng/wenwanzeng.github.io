@@ -109,4 +109,50 @@ section .main-body{
     }
 }
 
+/* Slide viewer for practice presentations */
+.slide-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
+.slide-frame {
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f8f8f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.slide-frame img {
+    width: 100%;
+    display: block;
+}
+
+.slide-btn {
+    font-size: 36px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #eeeeee;
+    color: #333333;
+    flex: 0 0 auto;
+}
+
+.slide-btn:hover {
+    background: #dddddd;
+}
+
+.slide-info {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 14px;
+}
