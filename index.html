@@ -185,27 +185,6 @@
         </div>
     </footer>
 
-    <!-- JS to load Project.md -->
-    <script>
-        fetch('contents/projects.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('projects-md').innerHTML = marked.parse(text);
-                if (typeof MathJax !== 'undefined') MathJax.typeset(); // for math rendering
-            });
-    </script>
-
-    <!-- JS to load Practice Projects -->
-    <script>
-        fetch('contents/practice_projects.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('practice-projects-md').innerHTML = marked.parse(text);
-                if (typeof MathJax !== 'undefined') MathJax.typeset();
-            });
-    </script>
-
-
     
 </body>
 
