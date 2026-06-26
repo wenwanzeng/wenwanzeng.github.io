@@ -127,6 +127,46 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  
+function initSlideViewers() {
+  const viewers = document.querySelectorAll(".slide-viewer");
+
+  viewers.forEach(function (viewer) {
+    if (viewer.dataset.initialized === "true") return;
+    viewer.dataset.initialized = "true";
+
+    const slideDir = viewer.dataset.slideDir;
+    const totalSlides = parseInt(viewer.dataset.totalSlides, 10);
+
+    let currentSlide = 1;
+
+    const image = viewer.querySelector(".slide-image");
+    const prevButton = viewer.querySelector(".prev-slide");
+    const nextButton = viewer.querySelector(".next-slide");
+    const counter = viewer.nextElementSibling.querySelector(".slide-counter");
+
+    function padNumber(num) {
+      return String(num).padStart(2, "0");
+    }
+
+    function updateSlide() {
+      image.src = `${slideDir}/slide${padNumber(currentSlide)}.png`;
+      counter.textContent = `${currentSlide} / ${totalSlides}`;
+    }
+
+    prevButton.addEventListener("click", function () {
+      currentSlide = currentSlide === 1 ? totalSlides : currentSlide - 1;
+      updateSlide();
+    });
+
+    nextButton.addEventListener("click", function () {
+      currentSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
+      updateSlide();
+    });
+  });
+}
+
+  
   // ------------------------------
   // Bootstrap scrollspy
   // ------------------------------
@@ -215,6 +255,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (name === 'practice_projects') {
+          initSlideViewers();
           scheduleDropdown('practice_projects', 'practice_projects', 'practice');
         }
       })
